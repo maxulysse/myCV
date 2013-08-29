@@ -1,4 +1,4 @@
-MAIN	= CV_MGarcia-en
+MAIN	= myCV
 
 all: pdf
 
@@ -28,7 +28,7 @@ log:
 		pdflatex ${MAIN}; \
 	done
 
-clean:
+clean: remove
 	rm -f ${MAIN}.pdf
 
 remove:
