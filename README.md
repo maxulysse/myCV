@@ -1,4 +1,5 @@
 myCV
 ====
 
-CV made with modernCV
+CV made with modernCV  
+https://launchpad.net/moderncv
