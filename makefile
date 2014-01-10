@@ -1,24 +1,13 @@
 MAIN	= myCV
+CV		= ${MAIN}.pdf
+LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.log ${MAIN}.out
 
-all: pdf
+all: ${CV}
 
-dvi:
-	latex ${MAIN}.tex \
-	while grep -q "Rerun to get cross-references" ${MAIN}.log; \
-	do \
-		latex ${MAIN}.tex \
-	done \
-
-ps:
-	dvips -q -t a4 $< -o ${MAIN}.ps
-
-pdf: log remove
-
-log:
+${CV}:
 	pdflatex ${MAIN}
 	@while ( grep "Rerun to get cross-references" ${MAIN}.log > /dev/null ); \
 	do \
-		echo '** Re-running LaTeX **'; \
 		bibtex ${MAIN}; \
 		pdflatex ${MAIN}; \
 	done
@@ -26,17 +15,11 @@ log:
 	pdflatex ${MAIN}
 	@while ( grep "Rerun to get outlines " ${MAIN}.log > /dev/null ); \
 	do \
-		echo '** Re-running LaTeX **'; \
 		pdflatex ${MAIN}; \
 	done
+	rm -f ${LOG}
 
-clean: remove
-	rm -f ${MAIN}.pdf
+clean:
+	rm -f ${LOG} ${MAIN}.pdf
 
-remove:
-	rm -f \
-	${MAIN}.aux \
-	${MAIN}.bbl \
-	${MAIN}.blg \
-	${MAIN}.log \
-	${MAIN}.out
+rebuild: clean all
