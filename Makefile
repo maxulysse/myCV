@@ -2,7 +2,7 @@ MAIN	= myCV
 CV		= ${MAIN}.pdf
 LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.log ${MAIN}.out
 
-all: ${CV}
+all: remove ${CV}
 
 ${CV}:
 	pdflatex ${MAIN}
@@ -19,7 +19,10 @@ ${CV}:
 	done
 	rm -f ${LOG}
 
-clean:
-	rm -f ${LOG} ${MAIN}.pdf
+remove:
+	rm -f ${CV}
+
+clean: remove
+	rm -f ${LOG}
 
 rebuild: clean all
