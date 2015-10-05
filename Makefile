@@ -1,6 +1,5 @@
 MAIN	= myCV
 CV		= ${MAIN}.pdf
-LOG		= ${MAIN}.aux ${MAIN}.bbl ${MAIN}.blg ${MAIN}.log ${MAIN}.out
 
 all: remove ${CV}
 
@@ -17,12 +16,12 @@ ${CV}:
 	do \
 		pdflatex ${MAIN}; \
 	done
-	rm -f ${LOG}
+	rm -f *.aux *.bbl *.blg *.ilg *.ind *.log *.out
 
 remove:
-	rm -f ${CV}
+	rm -f *.pdf
 
 clean: remove
-	rm -f ${LOG}
+	rm -f *.aux *.bbl *.blg *.ilg *.ind *.log *.out
 
 rebuild: clean all
