@@ -1,0 +1,19 @@
+sudo: required
+
+language: java
+
+jdk: openjdk8
+
+services:
+  - docker
+
+env:
+  - NXF_VER=0.23.0
+
+install:
+  - docker pull maxulysse/mycv
+  - curl -fsSL get.nextflow.io | bash
+
+script:
+  - ./nextflow run main.nf -with-docker -profile docker --theme altaCV
+  - ./nextflow run main.nf -with-docker -profile docker --theme modernCV

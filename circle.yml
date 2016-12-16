@@ -1,0 +1,19 @@
+machine:
+  java:
+    version: openjdk7
+
+  services:
+    - docker
+
+  environment:
+    NXF_VER: 0.23.0
+
+dependencies:
+  override:
+  - docker pull maxulysse/mycv
+  - curl -fsSL get.nextflow.io | bash
+
+test:
+  post:
+    - ./nextflow run main.nf -with-docker -profile docker --theme altaCV
+    - ./nextflow run main.nf -with-docker -profile docker --theme modernCV

@@ -1,0 +1,109 @@
+%!TEX program = xelatex
+\documentclass[10pt,a4paper,academicons]{altacv}
+
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+% If using xelatex or lualatex:
+\setmainfont{Lato}
+
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Maxime Garcia}
+\tagline{PhD in Bioinformatics}
+\photo{2.8cm}{pictures/Max}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{max@ithake.eu}
+  \phone{+46-723734336}
+  \mailaddress{Markvardsgatan 1, c/o Bruno}
+  \location{113 53 Stockholm, SWEDEN}
+  \homepage{http://ithake.eu/}
+  \twitter{@gau}
+  \linkedin{linkedin.com/in/maxugarcia}
+  \github{github.com/MaxUlysse}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+%   \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+%% Make the header extend all the way to the right, if you want. Extend the right margin by 8cm (=6.8cm marginparwidth + 1.2cm marginparsep)
+\begin{adjustwidth}{}{-8cm}
+\makecvheader
+\end{adjustwidth}
+
+%% Provide the file name containing the sidebar contents as an optional parameter to \cvsection.
+%% You can always just use \marginpar{...} if you do
+%% not need to align the top of the contents to any
+%% \cvsection title in the "main" bar.
+\cvsection[page1sidebar]{Experience}
+
+\cvevent{Bioinformatiker}{BarnTomörBanken}{April 2016 -- Ongoing}{Stockholm}
+\begin{itemize}
+\item Working within Karolinska Institutet / Instutitionen För Onkologi-Patologi
+\item and at Science for Life Laboratory / NGI Stockholm (Genomics Applications
+\end{itemize}
+
+\divider
+
+\cvevent{Job Title 2}{Company 2}{Month 20XX -- Ongoing}{Location}
+\begin{itemize}
+\item Job description 1
+\item Job description 2
+\end{itemize}
+
+\cvsection{Projects}
+
+\cvevent{Project 1}{Funding agency/institution}{Project duration}{}
+\begin{itemize}
+\item Details
+\end{itemize}
+
+\divider
+
+\cvevent{Project 2}{Funding agency/institution}{Project duration}{}
+A short abstract would also work.
+
+\medskip
+
+\cvsection{A Day of My Life}
+
+\wheelchart{1.5cm}{0.5cm}{%
+  6/8em/accent!30/{Sleep,\\beautiful sleep},
+  3/8em/accent!40/Hopeful novelist by night,
+  8/8em/accent!60/Daytime job,
+  2/10em/accent/Sports and relaxation,
+  5/6em/accent!20/Spending time with family
+}
+
+\clearpage
+\cvsection[page2sidebar]{Publications}
+
+\nocite{*}
+
+\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}},type=article]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+\end{document}
