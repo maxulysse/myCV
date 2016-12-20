@@ -15,5 +15,4 @@ dependencies:
 
 test:
   post:
-    - ./nextflow run main.nf -with-docker -profile docker --theme altaCV
-    - ./nextflow run main.nf -with-docker -profile docker --theme modernCV
+    - ./nextflow run . -with-docker -profile docker
