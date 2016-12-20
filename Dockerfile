@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y \
 # Install Academicons
 RUN git clone --depth 1 https://github.com/jpswalsh/academicons.git academicons
 RUN mkdir -p /usr/share/fonts/truetype/academicons/
-RUN find $PWD/academicons/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/academicons/ \; || return 1
-RUN rm -rf $PWD/academicons
+RUN find academicons/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/academicons/ \; || return 1
+RUN rm -rf academicons
 
 # Update fonts cache
 RUN fc-cache -f -v
