@@ -31,12 +31,11 @@ startMessage(version, revision)
 =====================
 */
 
-process CompileAltaCV {
+process CompileAltaCVen {
   publishDir ".", mode: 'move'
 
   input:
   file ('myAltaCVen.tex')
-  file ('myAltaCVfr.tex')
   file pictures
 
   output:
@@ -46,30 +45,60 @@ process CompileAltaCV {
   """
   xelatex myAltaCVen.tex
   xelatex myAltaCVen.tex
-  xelatex myAltaCVfr.tex
-  xelatex myAltaCVfr.tex
   """
 }
 
-process CompileModernCV {
-  publishDir ".", mode: 'move'
+// process CompileAltaCVfr {
+//   publishDir ".", mode: 'move'
+//
+//   input:
+//   file ('myAltaCVfr.tex')
+//   file all from altaCV
+//   file pictures
+//
+//   output:
+//   file("*.pdf") into altaCVpdf
+//
+//   script:
+//   """
+//   xelatex myAltaCVfr.tex
+//   xelatex myAltaCVfr.tex
+//   """
+// }
 
-  input:
-  file ('myModernCVen.tex')
-  file ('myModernCVfr.tex')
-  file pictures
+// process CompileModernCVen {
+//   publishDir ".", mode: 'move'
+//
+//   input:
+//   file ('myModernCVen.tex')
+//   file pictures
+//
+//   output:
+//   file("*.pdf") into modernCVpdf
+//
+//   script:
+//   """
+//   xelatex myModernCVen.tex
+//   xelatex myModernCVen.tex
+//   """
+// }
 
-  output:
-  file("*.pdf") into modernCVpdf
-
-  script:
-  """
-  xelatex myModernCVen.tex
-  xelatex myModernCVen.tex
-  xelatex myModernCVfr.tex
-  xelatex myModernCVfr.tex
-  """
-}
+// process CompileModernCVfr {
+//   publishDir ".", mode: 'move'
+//
+//   input:
+//   file ('myModernCVfr.tex')
+//   file pictures
+//
+//   output:
+//   file("*.pdf") into modernCVpdf
+//
+//   script:
+//   """
+//   xelatex myModernCVfr.tex
+//   xelatex myModernCVfr.tex
+//   """
+// }
 
 /*
 =====================
