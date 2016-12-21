@@ -13,9 +13,6 @@ RUN mkdir -p /usr/share/fonts/truetype/academicons/
 RUN find academicons/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/academicons/ \; || return 1
 RUN rm -rf academicons
 
-# Update fonts cache
-RUN fc-cache -f -v
-
 # Install ModernCV
 RUN git clone --depth 1 https://github.com/xdanaux/moderncv.git /usr/share/texmf/tex/latex/moderncv
 
@@ -24,3 +21,6 @@ RUN git clone --depth 1 https://github.com/liantze/AltaCV.git /usr/share/texmf/t
 
 # Update TeX cache
 RUN texhash
+
+# Update fonts cache
+RUN fc-cache -f -v
