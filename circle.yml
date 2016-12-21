@@ -10,7 +10,7 @@ machine:
 
 dependencies:
   override:
-  - docker pull maxulysse/mycv
+  - docker pull maxulysse/mycv:v0.16.1221
   - curl -fsSL get.nextflow.io | bash
 
 test:
