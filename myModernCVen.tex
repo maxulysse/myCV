@@ -1,89 +1,111 @@
 %!TEX program = xelatex
-\documentclass[10pt,a4paper,sans]{moderncv}
-\moderncvstyle{classic}
-\moderncvcolor{blue}
-%\nopagenumbers{}
-\RequirePackage{inputenc}
-\RequirePackage[scale=0.92]{geometry}
+% Made with modernCV: https://github.com/xdanaux/moderncv
 
-\setlength{\hintscolumnwidth}{3cm}
-\name{Maxime Ulysse}{Garcia}
+\documentclass[10pt,a4paper,sans]{moderncv}
+
+% style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvstyle{classic}
+% color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+\moderncvcolor{blue}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[scale=0.9]{geometry}
+\RequirePackage[autostyle]{csquotes}
+\RequirePackage[backend=biber]{biblatex}
+\RequirePackage[english]{babel}
+\RequirePackage{fontawesome}
+\RequirePackage{academicons}
+
+\addbibresource[datatype=bibtex]{biblio.bib}
+
+\name{Maxime}{Garcia}
 \title{PhD in Bioinformatics}
-\extrainfo{Date of birth: 1982-05-14\\Nationality: French}
-\address{Markvardsgatan 1}{113 53 Stockholm}{Sweden}
-\phone[mobile]{+46-723734336}
-\email{max@ithake.eu}
-\homepage{ithake.eu/}
-\social[linkedin]{maxugarcia}
-\social[twitter]{gau}
-\social[github]{MaxUlysse}
+\extrainfo{\faCalendarO\ 1982-05-14\\
+% \faGithub MaxUlysse\\
+\faMobile\ +46-(0)7-237-343-36\\
+\faEnvelope\ \href{mailto:maxime.garcia@scilifelab.se}{\nolinkurl{maxime.garcia@scilifelab.se}}\\
+\faGlobe\ \url{https://maxulysse.github.io/}}
+% \address{Markvardsgatan 1}{113 53 Stockholm}{}
+% \phone[mobile]{+46-723734336}
+% \homepage{maxulysse.github.io}
+% \email{maxime.garcia@scilifelab.se}
+% \social[linkedin]{maxugarcia}
+% \social[twitter]{gau}
+% \social[github]{MaxUlysse}
 \photo[64pt][0.4pt]{pictures/Max}
-\quote{Specialized in large scale data integration and visualization}
+\quote{Large scale data integration, automatization,\\analysis and visualization}
 
 \begin{document}
 	\makecvtitle
-	\section{Experiences}
-		\cventry{2016 -- ongoing}{Bioinformatician}{}{BarnTumörBanken - Sitting at both Karolinska Institutet / Instutitionen För Onkologi-Patologi and at Science for Life Laboratory / NGI Stockholm (Genomics Applications)}{Stockholm}{}
-		\cventry{2013 -- 2014}{Research Associate in \textit{Bioinformatics}}{}{National University of Singapore - Cancer Science Institute of Singapore}{Singapore}{}
-		\cvitem{experiences}{\small{Intern management; Collaboration with PhDs, Engineers; Presentations in international conferences (posters and talks)}}
-		\cventry{2009 -- 2013}{PhD in \textit{Bioinformatics and Genomics}}{}{Integrative Bioinformatics Platform - Centre de Recherche en Cancérologie de Marseille, Aix-Marseille Université UM105, Intitut Paoli-Calmettes, Inserm U1028, CNRS UMR7258}{Marseille}{Biomarkers discovery in cancer by Interactome-Transcriptome Integration}
-		\cvitem{experiences}{\small{Intern management; Collaboration with MDs, PhDs, Research Engineers and socio-economic partner (IPSOGEN); Presentations in international conferences (posters and talks)}}
-		\cvitem{skills}{\small{Parallel scripting; Project management; Oral and visual communication}}
+	\section{Experience}
+		\cventry{\faCalendarO\ 2016--now}{Bioinformatician}{BarnTumörBanken}{\faMapMarker\ Stockholm, Sweden}{}{Development of a tumor/normal pair analysis workflow in collaboration with SciLifeLab NGI Stockholm; Whole Genome Sequencing analysis.}
+		\cventry{\faCalendarO\ 2013--2014}{Research Associate}{Cancer Science Institute of Singapore}{\faMapMarker\ Singapore}{}{RNAseq analysis; Genome Browser Development.}
+		\cventry{\faCalendarO\ 2009--2013}{PhD candidate}{Centre de Recherche en Cancérologie de Marseille}{\faMapMarker\ Marseille, France}{}{Development of a Interactome-Transcriptome analysis pipeline; Intern management.}
 
 	\section{Education \& Qualifications}
-		\cventry{2007 -- 2009}{Master's Degree in \textit{Bioinformatics and Genomics}}{}{Faculté des Sciences de Luminy}{Marseille}{}
-		\cvitem{keywords}{\small{Object-oriented programming, Dynamic modelization of biological networks, Mathematics applied to Biology}}
-		\cventry{2007}{Erasmus Semester in \textit{School of Biological Sciences}}{}{University of East Anglia}{Norwich}{}
-		\cvitem{keywords}{\small{Research project in Bioinformatics}}
-		\cventry{2003 -- 2007}{Bachelor's Degree in \textit{Biology and Biochemistry}}{}{Faculté des Sciences de Luminy}{Marseille}{}
+		\cventry{\faCalendarO\ 2013}{PhD}{Bioinformatics and Genomics}{Aix-Marseille Université}{\faMapMarker\ Marseille, France}{}{}
+		\cventry{\faCalendarO\ 2007--2009}{Master's Degree}{Bioinformatics and Genomics}{Université Aix-Marseille II}{\faMapMarker\ Marseille, France}{}
+		\cventry{\faCalendarO\ 2007}{Erasmus Semester}{School of Biological Sciences}{University of East Anglia}{\faMapMarker\ Norwich, UK}{}
+		\cventry{\faCalendarO\ 2003--2007}{Bachelor's Degree}{Biology and Biochemistry}{Université Aix-Marseille II}{\faMapMarker\ Marseille, France}{}
 
-	\section{Publications}
-		\cvitem{chapter}{M. Garcia et al., CNV-Interactome-Transcriptome Integration to detect driver genes in cancerology, \textit{Microarray Image and Data Analysis: Theory and Practice}, CRC Press, 2014}
-		\cvitem{article}{T. Bonacci et al., Chemotherapy induced changes of post-translational modifications by ubiquitin and ubiquitin-like proteins in pancreatic cancer cells, \textit{J Proteome Res.} 2014 May 2;13(5):2478-94}
-		\cvitem{chapter}{M. Garcia et al., Detection of driver protein complexes in breast cancer metastasis by large scale transcriptome-interactome integration, \textit{Methods Mol Biol.} 2014;1101:67-85}
-		\cvitem{article}{M. Garcia et al., Interactome-Transcriptome integration for predicting distant metastasis in breast cancer, \textit{Bioinformatics}, 2012}
-		\cvitem{chapter}{M. Garcia et al., Linking interactome to disease: a network-based analysis of metastatic relapse in breast cancer \textit{Handbook of Research on Computational and Systems Biology: Interdisciplinary Applications}, IGI Global, 406-427, 2011}
+	\nocite{*}
+	\printbibliography[title={Publications}]
+	% \printbibliography[title={Articles},type=article]
+	% \printbibliography[title={Chapters},type=incollection]
 
 	\section{Computers skills}
-		\cvdoubleitem{Scripting}{Perl, Python, Bash}{Statistics}{MATLAB, R}
-		\cvdoubleitem{Web}{TypeScript, JavaScript, PHP/MySQL}{CMS}{Wordpress, Joomla}
-		\cvdoubleitem{Management}{Trello, Redmine, SVN, Git}{Writing}{\LaTeX, Office Suite}
-		\cvdoubleitem{Graphism}{Inkscape}{+}{Use of cluster, Linux}
+		\cvdoubleitem{Scripting}{Groovy, Bash, Perl}{Management}{Github, Trello}
+		\cvdoubleitem{Pipeline}{Nextflow, Make}{Containers}{Docker, Singularity}
+		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
+		\cvdoubleitem{Communication}{Slack, \LaTeX, Beamer, Inkscape}{Others}{Linux, clusters, Git, R}
 
 	\section{Languages}
-		\cvitem{French}{Mother tongue}
-		\cvitem{English}{Fluent}
+		\cvdoubleitem{French}{Mother tongue}{English}{Fluent}
 
 	\clearpage
 
-	\section{Presentations}
-		\cvitem{2016}{The XVth KICancer Retreat 2016 - \textit{poster}, Djurö, Sweden}
-		\cvitem{2013}{5th Frontiers in Cancer Science (FCS) - \textit{poster}, Singapore, Singapore}
-		\cvitem{2012}{11th European Conference on Computational Biology (ECCB) - \textit{poster}, Basel, Switzerland}
-		\cvitem{2012}{13ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM) - \textit{poster}, Rennes, France}
-		\cvitem{2012}{6ème Colloque du Cancéropôle PACA - \textit{poster}, Marseille, France}
-		\cvitem{2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM) - \textit{poster}, Paris, France}
-		\cvitem{2011}{19th meeting of doctoral school - \textit{poster}, Marseille, France}
-		\cvitem{2011}{Mathematical and Statistical Aspects of Molecular Biology (MASAMB) XXI, Vienna, Austria}
-		\cvitem{2010}{Biologistes Chimistes et Physiciens VII - \textit{poster}, Marseille, France}
-		\cvitem{2010}{Cancer Bioinformatics Workshop, Cambridge, UK}
-		\cvitem{2010}{Interactomics: at the crossroads of biology and bioinformatics - \textit{poster}, St Raphaël, France}
-
 	\section{Fellowhips}
-		\cvitem{2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}
-		\cvitem{2011}{Travel grant from MASAMB organisation}
-		\cvitem{2009}{PhD fellowhip from INSERM/Région PACA}
+		\cvitem{\faCalendarO\ 2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}
+		\cvitem{\faCalendarO\ 2011}{Travel grant from MASAMB organisation}
+		\cvitem{\faCalendarO\ 2009}{PhD fellowhip from INSERM/Région PACA}
 
-	\section{Other Responsibilities}
-		\cvitem{Scientific Society}{Member of International Society of Computational Biology and Société Française de BioInformatique}
-		\cvitem{Associations}{Vice-president of JeBiF - RSG-France (Association of French Young Bioinformaticians) from 2012 to 2014}
-		\cvitem{Doctoriales}{Member of organization committee and logistic support for Doctoriales en Provence in 2012}
-		\cvitem{Fête de la Science}{Conception and animation of a stand at Marché de la Chimie for Cancéropôle-PACA in 2011}
-		\cvitem{Blogs}{Contributor to \url{http://bioinfo-fr.net/} and \url{http://www.leblogducinema.com/}}
-		\cvitem{Conventions}{Logistic support in organization of Plan de Cuques Comics Festival 2007 to 2011}
-		\cvitem{Skill}{Sauveteur-Secouriste du Travail (French First-Aid Workplace Diploma)}
+	\section{Presentations}
+		\cvitem{\faCalendarO\ 2011}{Mathematical and Statistical Aspects of Molecular Biology (MASAMB) XXI, \faMapMarker\ Vienna, Austria}
+		\cvitem{\faCalendarO\ 2010}{Cancer Bioinformatics Workshop, \faMapMarker\ Cambridge, UK}
+
+	\section{Posters}
+		\cvitem{\faCalendarO\ 2017}{European Human Genetics Conference 2017, \faMapMarker\ Copenhagen, Denmark}
+		\cvitem{\faCalendarO\ 2016}{The XVth KICancer Retreat 2016, \faMapMarker\ Djurö, Sweden}
+		\cvitem{\faCalendarO\ 2013}{5th Frontiers in Cancer Science (FCS), \faMapMarker\ Singapore, Singapore}
+		\cvitem{\faCalendarO\ 2012}{11th European Conference on Computational Biology (ECCB), \faMapMarker\ Basel, Switzerland}
+		\cvitem{\faCalendarO\ 2012}{13ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM), \faMapMarker\ Rennes, France}
+		\cvitem{\faCalendarO\ 2012}{6ème Colloque du Cancéropôle PACA, \faMapMarker\ Marseille, France}
+		\cvitem{\faCalendarO\ 2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM), \faMapMarker\ Paris, France}
+		\cvitem{\faCalendarO\ 2011}{19th meeting of doctoral school, \faMapMarker\ Marseille, France}
+		\cvitem{\faCalendarO\ 2010}{Biologistes Chimistes et Physiciens VII, \faMapMarker\ Marseille, France}
+		\cvitem{\faCalendarO\ 2010}{Interactomics: at the crossroads of biology and bioinformatics, \faMapMarker\ St Raphaël, France}
+
+	\section{Scientific Societies}
+		\cvitem{ISCB}{Member of International Society of Computational Biology}
+		\cvitem{SFBI}{Member of Société Française de BioInformatique}
+		\cvitem{CFD}{Member of Communauté Française des Docteurs}
+
+	\section{Associations}
+		\cvitem{\faCalendarO\ 2012-now}{Contributor to \url{http://bioinfo-fr.net/}}
+		\cvitem{\faCalendarO\ 2012-2014}{Vice-president of JeBiF - RSG-France (Association of French Young Bioinformaticians)}
+		\cvitem{\faCalendarO\ 2010-2011}{President of Hippo'Thèse (Association of young researchers in Biology at Aix-Marseille University)}
+		\cvitem{\faCalendarO\ 2010-2011}{Vice-president and webmaster of BIOTechno Network (French Network of Associations organizing forums about careers in Biotechnology)}
+		\cvitem{\faCalendarO\ 2009-2010}{Webmaster of Hippo'Thèse}
+
+	\section{Organization and Events}
+		\cvitem{\faCalendarO\ 2015}{Journées nationales de la CFD (Webmaster, Member of organization committee)}
+		\cvitem{\faCalendarO\ 2012}{Doctoriales en Provence (Member of organization committee and logistic support)}
+		\cvitem{\faCalendarO\ 2011}{Marché de la Chimie @ Fête de la Science (Conception and animation of a stand)}
+		\cvitem{\faCalendarO\ 2011}{7th BIOTechno forum in Marseille (Head of organization committee)}
+		\cvitem{\faCalendarO\ 2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University (Member of organization committee, abstract selection, jury member, logistic support)}
+		\cvitem{\faCalendarO\ 2007-2011}{Logistic support in organization of Plan de Cuques French Comics Festival}
 
 	\section{Interests}
-		\cvitem{}{Taï-Chi-Chuan, Gardening, Roller}
+		\cvitem{}{Yoga, Running, Cinema, Poker, Gardening, Ice-Skating, Science-Fiction, Popular science}
 
 \end{document}
