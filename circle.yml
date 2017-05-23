@@ -1,18 +1,19 @@
 machine:
   java:
-    version: openjdk7
+    version: openjdk8
 
   services:
     - docker
 
   environment:
-    NXF_VER: 0.23.0
+    NXF_VER: 0.24.2
 
 dependencies:
   override:
-  - docker pull maxulysse/mycv:v0.16.1221
   - curl -fsSL get.nextflow.io | bash
+  - chmod +x nextflow
+  - sudo mv nextflow /usr/local/bin/
 
 test:
   post:
-    - ./nextflow run . -with-docker -profile docker
+    - ./script/test_docker.sh
