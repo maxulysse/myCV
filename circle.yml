@@ -16,4 +16,4 @@ dependencies:
 
 test:
   post:
-    - ./script/test_docker.sh
+    - ./scripts/test_docker.sh

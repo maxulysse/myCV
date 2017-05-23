@@ -16,4 +16,4 @@ install:
   - sudo mv nextflow /usr/local/bin/
 
 script:
-  - ./script/test_docker.sh
+  - ./scripts/test_docker.sh
