@@ -4,15 +4,14 @@
 
 myCV compiler in Nextflow using XeLaTex.
 A Docker container is provided.
-It's an Ubuntu 16.04 image containing texlive-xetex and Academicons.
+It's an Debian 8.6 image containing texlive-xetex.
 
 ## Usage with Docker:
 ```bash
-nextflow run MaxUlysse/myCV /
--profile docker -with-docker
+nextflow run MaxUlysse/myCV -profile docker -with-docker
 ```
 
-[version-badge]:    https://img.shields.io/badge/myCV-v0.16.1221-green.svg
+[version-badge]:    https://img.shields.io/badge/myCV-0.17.0523-green.svg
 [version-link]:     https://github.com/MaxUlysse/myCV
 [license-badge]:    https://img.shields.io/badge/license-MIT-blue.svg
 [license-link]:     https://github.com/MaxUlysse/myCV/blob/master/LICENSE

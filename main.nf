@@ -7,7 +7,7 @@ vim: syntax=groovy
 =                     m  y  C  V     c  o  m  p  i  l  e  r                    =
 ================================================================================
 @Author
-Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
+Maxime Garcia <max@ithake.eu> [@MaxUlysse]
 --------------------------------------------------------------------------------
  @Homepage
  https://github.com/MaxUlysse/myCV
@@ -25,15 +25,8 @@ Maxime Garcia <maxime.garcia@scilifelab.se> [@MaxUlysse]
 ================================================================================
 */
 
-revision = grabGitRevision() ?: ''
-version = 'v0.16.1221'
-
-tex = [
-  file ('myModernCVen.tex'),
-  file ('myModernCVfr.tex')
-  // file ('myAltaCVen.tex'),
-  // file ('myAltaCVfr.tex')
-]
+revision = grabRevision()
+version = '0.17.0523'
 
 switch (params) {
   case {params.help} :
@@ -45,8 +38,16 @@ switch (params) {
     exit 1
 }
 
-pictures = file(params.pictures)
+tex = []
 
+params.tex.each {tex << file(it)}
+
+sideTex = Channel.fromPath( "$params.sideTex" )
+sideTex = sideTex.flatten().toList()
+
+biblio = file("$params.biblio")
+
+pictures = file(params.pictures)
 startMessage(version, revision)
 
 /*
@@ -62,14 +63,18 @@ process CompileCV {
   input:
   file cv from tex
   file pictures
+  file sideTex
+  file biblio
 
   output:
   file("*.pdf") into pdf
 
   script:
   """
-  xelatex ${cv}
-  xelatex ${cv}
+  xelatex ${cv.baseName}.tex
+  biber ${cv.baseName}.bcf
+  xelatex ${cv.baseName}.tex
+  xelatex ${cv.baseName}.tex
   """
 }
 
@@ -79,30 +84,18 @@ process CompileCV {
 ================================================================================
 */
 
-def grabGitRevision() { // Borrowed from https://github.com/NBISweden/wgs-structvar
-  if (workflow.commitId) { // it's run directly from github
-    return workflow.commitId.substring(0,10)
-  }
-  // Try to find the revision directly from git
-  headPointerFile = file("${baseDir}/.git/HEAD")
-  if (!headPointerFile.exists()) {
-    return ''
-  }
-  ref = headPointerFile.newReader().readLine().tokenize()[1]
-  refFile = file("${baseDir}/.git/$ref")
-  if (!refFile.exists()) {
-    return ''
-  }
-  revision = refFile.newReader().readLine()
-  return revision.substring(0,10)
+def grabRevision() {
+  return workflow.revision ?: workflow.scriptId.substring(0,10)
 }
 
 def helpMessage(version, revision) {
   log.info "myCV compiler ~ $version - revision: $revision"
   log.info "    Usage:"
-  log.info "       nextflow run MaxUlysse/myCV --tex <input.tex>"
+  log.info "       nextflow run MaxUlysse/myCV [--tex <input.tex>]"
   log.info "    --help"
   log.info "       you're reading it"
+  log.info "    --tex"
+  log.info "       compile input tex file"
   log.info "    --version"
   log.info "       displays version number"
 }
