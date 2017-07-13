@@ -8,7 +8,7 @@ It's an Debian 8.6 image containing texlive-xetex.
 
 ## Usage with Docker:
 ```bash
-nextflow run MaxUlysse/myCV -profile docker -with-docker
+nextflow run MaxUlysse/myCV -profile docker
 ```
 
 [version-badge]:    https://img.shields.io/badge/myCV-0.17.0523-green.svg
