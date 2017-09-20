@@ -26,7 +26,7 @@ Maxime Garcia <max@ithake.eu> [@MaxUlysse]
 */
 
 revision = grabRevision()
-version = '0.17.0523'
+version = '0.17.0920'
 
 switch (params) {
   case {params.help} :
@@ -38,12 +38,9 @@ switch (params) {
     exit 1
 }
 
-tex = []
+params.tex = "CV-M-Garcia-2017.tex"
 
-params.tex.each {tex << file(it)}
-
-sideTex = Channel.fromPath( "$params.sideTex" )
-sideTex = sideTex.flatten().toList()
+tex = file(params.tex)
 
 biblio = file("$params.biblio")
 
@@ -63,7 +60,6 @@ process CompileCV {
   input:
   file cv from tex
   file pictures
-  file sideTex
   file biblio
 
   output:

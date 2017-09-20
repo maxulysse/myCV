@@ -1,6 +1,6 @@
 FROM debian:8.6
 
-MAINTAINER Maxime Garcia <max@ithake.eu>
+MAINTAINER Maxime Garcia <max.u.garcia@gmail.com>
 
 # Install pre-requistes
 RUN apt-get update && apt-get install -y \
