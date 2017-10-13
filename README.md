@@ -1,19 +1,21 @@
 # myCV
 
-[![myCV version][version-badge]][version-link] [![License][license-badge]][license-link] [![Nextflow version][nextflow-badge]][nextflow-link] [![works on my machine][works-badge]][works-link] [![CircleCI status][circleci-badge]][circleci-link] [![Travis status][travis-badge]][travis-link] [![Docker status][docker-badge]][docker-link]
+[![Version][version-badge]][version-link]
+[![License][license-badge]][license-link]
+[![Nextflow version][nextflow-badge]][nextflow-link]
+[![Travis status][travis-badge]][travis-link]
+[![CircleCI status][circleci-badge]][circleci-link]
+[![works on my machine][works-badge]][works-link]
 
-myCV compiler in Nextflow using XeLaTex.
-A Docker container is provided.
-It's an Debian 8.6 image containing texlive-xetex.
+myCV compiler in [Nextflow][nextflow-link] using [XeLaTex][xetex-link] and [modernCV][moderncv-link]
 
-## Usage with Docker:
+## Docker container [![Docker status][docker-badge]][docker-link]
+Based on `debian:stretch-slim`.
+- Contain: `texlive-xetex`, `modernCV` and `academicons`
+
+## Usage with Docker
 ```bash
 nextflow run MaxUlysse/myCV -profile docker
-```
-
-## Usage with Singularity:
-```bash
-nextflow run MaxUlysse/myCV -profile singularity
 ```
 
 [circleci-badge]: https://circleci.com/gh/MaxUlysse/myCV.svg?style=shield
@@ -22,11 +24,13 @@ nextflow run MaxUlysse/myCV -profile singularity
 [docker-link]: https://hub.docker.com/r/maxulysse/mycv
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/myCV.svg
 [license-link]: https://github.com/MaxUlysse/myCV/blob/master/LICENSE
+[moderncv-link]: https://launchpad.net/moderncv
 [nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.25.0-brightgreen.svg
 [nextflow-link]: https://www.nextflow.io/
 [travis-badge]: https://img.shields.io/travis/MaxUlysse/myCV.svg
 [travis-link]: https://travis-ci.org/MaxUlysse/myCV
-[version-badge]: https://img.shields.io/badge/myCV-0.17.0920-green.svg
+[version-badge]: https://img.shields.io/badge/myCV-0.17.1013-green.svg
 [version-link]: https://github.com/MaxUlysse/myCV
-[works-badge]: https://img.shields.io/badge/works-on_my_machine-blue.svg
+[works-badge]: https://img.shields.io/badge/works-on_my_machine-brightgreen.svg
 [works-link]: https://github.com/nikku/works-on-my-machine
+[xetex-link]: http://xetex.sourceforge.net/

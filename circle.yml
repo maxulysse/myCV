@@ -6,7 +6,7 @@ machine:
     - docker
 
   environment:
-    NXF_VER: 0.24.2
+    NXF_VER: 0.25.7
 
 dependencies:
   override:
