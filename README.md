@@ -11,7 +11,7 @@ myCV compiler in [Nextflow][nextflow-link] using [XeLaTex][xetex-link] and [mode
 
 ## Docker container [![Docker status][docker-badge]][docker-link]
 Based on `debian:stretch-slim`.
-Contain: `texlive-xetex`, `modernCV` and `academicons`
+- Contain: `texlive-xetex`, `modernCV` and `academicons`
 
 ## Usage with Docker
 ```bash
