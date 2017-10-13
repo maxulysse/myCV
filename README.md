@@ -18,11 +18,6 @@ Contain: `texlive-xetex`, `modernCV` and `academicons`
 nextflow run MaxUlysse/myCV -profile docker
 ```
 
-## Usage with Singularity
-```bash
-nextflow run MaxUlysse/myCV -profile singularity
-```
-
 [circleci-badge]: https://circleci.com/gh/MaxUlysse/myCV.svg?style=shield
 [circleci-link]: https://circleci.com/gh/MaxUlysse/myCV
 [docker-badge]: https://img.shields.io/docker/automated/maxulysse/mycv.svg

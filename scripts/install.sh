@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xeuo pipefail
 
-TOOL="all"
+TOOL="nextflow"
 
 while [[ $# -gt 0 ]]
 do
