@@ -1,31 +1,41 @@
 %!TEX program = xelatex
 % Made with modernCV: https://github.com/xdanaux/moderncv
 
-\documentclass[11.5pt,a4paper,sans]{moderncv}
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
 \moderncvstyle{classic}
 % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
 \moderncvcolor{blue}
 
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[scale=0.9]{geometry}
 \RequirePackage[autostyle]{csquotes}
-\RequirePackage[backend=biber]{biblatex}
+\RequirePackage[backend=biber, doi=true]{biblatex}
 \RequirePackage[english]{babel}
-\RequirePackage{fontawesome}
+\RequirePackage[scale=0.9]{geometry}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{academicons}
+\RequirePackage{contour}
+\RequirePackage{fontawesome}
+\RequirePackage[normalem]{ulem}
 
 \addbibresource[datatype=bibtex]{biblio.bib}
+
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.6pt}
+
+\newcommand{\myuline}[1]{
+	\uline{\contour{white}{#1}}
+}
 
 \name{Maxime}{Garcia}
 \title{PhD in Bioinformatics}
 \extrainfo{\faCalendarO\ 1982-05-14\\
-% \faGithub MaxUlysse\\
 \faMobile\ +46-(0)7-237-343-36\\
+\faTwitter\ gau\\
+\faGithub MaxUlysse\\
 \faEnvelope\ \href{mailto:maxime.garcia@scilifelab.se}{\nolinkurl{maxime.garcia@scilifelab.se}}\\
-\faGlobe\ \url{https://maxulysse.github.io/}}
-% \address{Markvardsgatan 1}{113 53 Stockholm}{}
+\faGlobe\ \myuline{\url{https://maxulysse.github.io/}}}
+% \address{Markvardsgatan 1}{113 53 Stockholm}{Sweden}
 % \phone[mobile]{+46-723734336}
 % \homepage{maxulysse.github.io}
 % \email{maxime.garcia@scilifelab.se}
@@ -45,6 +55,7 @@
 		\cvitem{}{\small{RNAseq analysis; Genome Browser Development.}}
 		\cvitem{\faCalendarO\ 2009--2013\hfill}{\textbf{PhD candidate}, \textit{Centre de Recherche en Cancérologie de Marseille}\hfill\faMapMarker\ Marseille, France}
 		\cvitem{}{\small{Development of a Interactome-Transcriptome analysis pipeline; Intern management.}}
+
 	\vfill
 	\section{Education}
 		\cvitem{\faCalendarO\hfill\ 2013}{\textbf{PhD}, \textit{Bioinformatics and Genomics}, Aix-Marseille Université\hfill\faMapMarker\ Marseille, France}
@@ -54,23 +65,25 @@
 
 	\nocite{*}
 	\vfill
+	% \section{Publications}
 	\printbibliography[title={Publications}]
-	% \printbibliography[title={Articles},type=article]
-	% \printbibliography[title={Chapters},type=incollection]
+	% \printbibliography[type=article,heading=subbibliography,title={Articles}]
+	% \printbibliography[type=inbook,heading=subbibliography,title={Chapters}]
 
 	\vfill
 	\section{Skills}
 		\cvdoubleitem{Scripting}{Groovy, Bash, Perl}{Pipeline}{Nextflow, Make}
 		\cvdoubleitem{Containers}{Docker, Singularity}{Management}{Github, Trello}
 		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
-		\cvdoubleitem{Others}{Slack, \LaTeX, Beamer, Inkscape}{+}{Linux, clusters, Git, R}
+		\cvdoubleitem{Others}{Slack, \LaTeX, Beamer, Inkscape}{+}{Linux, Clusters, Git, R}
+
 	\vfill
 	\section{Languages}
-		\cvdoubleitem{English}{Fluent}{French}{Mother tongue}
-		\cvdoubleitem{Swedish}{Notions}{}{}
+		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
 
 	\clearpage
 
+		\vfill
 	\section{Fellowhips}
 		\cvitem{\faCalendarO\hfill\ 2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}
 		\cvitem{\faCalendarO\hfill\ 2011}{Travel grant from MASAMB organisation}
@@ -103,7 +116,7 @@
 
 	\vfill
 	\section{Associations}
-		\cvitem{\faCalendarO\ 2012-now\hfill}{Contributor to \url{http://bioinfo-fr.net/}\hfill\small{(Collaborative French-speaking bioinformatics blog)}}
+		\cvitem{\faCalendarO\ 2012-now\hfill}{Contributor to \myuline{\url{http://bioinfo-fr.net/}}\hfill\small{(Collaborative French-speaking bioinformatics blog)}}
 		\cvitem{\faCalendarO\ 2012-2014\hfill}{Vice-president of JeBiF - RSG-France\hfill\small{(Association of French Young Bioinformaticians)}}
 		\cvitem{\faCalendarO\ 2010-2011\hfill}{President of Hippo'Thèse\hfill\small{(Association of young researchers in Biology at Aix-Marseille University)}}
 		\cvitem{\faCalendarO\ 2010-2011\hfill}{Vice-president/Webmaster of BIOTechno Network}
