@@ -22,7 +22,7 @@ nextflow run MaxUlysse/myCV -profile docker
 [circleci-link]: https://circleci.com/gh/MaxUlysse/myCV
 [docker-badge]: https://img.shields.io/docker/automated/maxulysse/mycv.svg
 [docker-link]: https://hub.docker.com/r/maxulysse/mycv
-[licence-badge]: https://img.shields.io/github/license/MaxUlysse/myCV.svg
+[license-badge]: https://img.shields.io/github/license/MaxUlysse/myCV.svg
 [license-link]: https://github.com/MaxUlysse/myCV/blob/master/LICENSE
 [moderncv-link]: https://launchpad.net/moderncv
 [nextflow-badge]: https://img.shields.io/badge/nextflow-%E2%89%A50.25.0-brightgreen.svg
