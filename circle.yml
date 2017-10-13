@@ -10,7 +10,9 @@ machine:
 
 dependencies:
   override:
-  - ./script/install.sh --tool nextflow
+  - curl -fsSL get.nextflow.io | bash
+  - chmod +x nextflow
+  - sudo mv nextflow /usr/local/bin/
 
 test:
   post:
