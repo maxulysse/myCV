@@ -25,33 +25,33 @@ Maxime Garcia <max@ithake.eu> [@MaxUlysse]
 ================================================================================
 */
 
-revision = grabRevision()
-version = '0.17.0920'
+if (!nextflow.version.matches('>= 0.25.3')) exit 1, "Nextflow version 0.25.3 or greater is needed to run this workflow"
 
-switch (params) {
-  case {params.help} :
-    helpMessage(version, revision)
-    exit 1
+version = '0.17.1013'
 
-  case {params.version} :
-    versionMessage(version, revision)
-    exit 1
-}
+params.help = false
+params.version = false
 
-params.tex = "CV-M-Garcia-2017.tex"
+if (params.help) exit 0, helpMessage()
+if (params.version) exit 0, versionMessage()
 
+params.biblio = 'biblio.bib'
+biblio = file(params.biblio)
+
+params.pictures = 'pictures'
+pictures = file(params.pictures)
+
+if (!params.tex) exit 1, 'No tex file, see --help for more information'
 tex = file(params.tex)
 
-biblio = file("$params.biblio")
-
-pictures = file(params.pictures)
-startMessage(version, revision)
 
 /*
 ================================================================================
 =                                 P R O C E S S                                =
 ================================================================================
 */
+
+startMessage()
 
 process CompileCV {
   tag {cv}
@@ -81,57 +81,82 @@ process CompileCV {
 */
 
 def grabRevision() {
-  return workflow.revision ?: workflow.scriptId.substring(0,10)
+  // Return the same string executed from github or not
+  return workflow.revision ?: workflow.commitId ?: workflow.scriptId.substring(0,10)
 }
 
-def helpMessage(version, revision) {
-  log.info "myCV compiler ~ $version - revision: $revision"
+def helpMessage() {
+  // Display help message
+  this.myCVmessage()
   log.info "    Usage:"
-  log.info "       nextflow run MaxUlysse/myCV [--tex <input.tex>]"
-  log.info "    --help"
-  log.info "       you're reading it"
+  log.info "      nextflow run MaxUlysse/myCV [--tex <input.tex>]"
   log.info "    --tex"
-  log.info "       compile input tex file"
+  log.info "      Compile the given tex file"
+  log.info "    --pictures"
+  log.info "      Specify in which directory are the pictures"
+  log.info "      Default is: pictures/"
+  log.info "    --biblio"
+  log.info "      Specify the bibliography file"
+  log.info "      Default is: biblio.bib"
+  log.info "    --tag"
+  log.info "      Specify with tag to use for the docker container"
+  log.info "      Default is current version: $version"
+  log.info "    --help"
+  log.info "      You're reading it"
   log.info "    --version"
-  log.info "       displays version number"
+  log.info "      Displays version number"
 }
 
-
-def startMessage(version, revision) {
-  log.info "myCV compiler ~ $version - revision: $revision"
-  log.info "Command line: $workflow.commandLine"
-  log.info "Project Dir : $workflow.projectDir"
+def minimalInformationMessage() {
+  // Minimal information message
+  log.info "Command Line: $workflow.commandLine"
   log.info "Launch Dir  : $workflow.launchDir"
   log.info "Work Dir    : $workflow.workDir"
+  log.info "Profile     : $workflow.profile"
+  log.info "Container   : $workflow.container"
+  log.info "Tex file    : $tex"
+  log.info "Biblio      : $biblio"
+  log.info "Pictures in : $pictures"
 }
 
-def versionMessage(version, revision) {
+def myCVmessage() {
+  // Display myCV compiler message
+  log.info "myCV compiler ~ $version - " + this.grabRevision() + (workflow.commitId ? " [$workflow.commitId]" : "")
+}
+
+def nextflowMessage() {
+  // Nextflow message (version + build)
+  log.info "N E X T F L O W  ~  version $workflow.nextflow.version $workflow.nextflow.build"
+}
+
+def startMessage() {
+  // Display start message
+  this.myCVmessage()
+  this.minimalInformationMessage()
+}
+
+def versionMessage() {
+  // Display version message
   log.info "myCV compiler"
   log.info "  version $version"
-  if (workflow.commitId) {
-  	log.info "Git info    : $workflow.repository - $workflow.revision [$workflow.commitId]"
-  } else {
-  	log.info "  revision  : $revision"
-  }
-  log.info "Project   : $workflow.projectDir"
-  log.info "Directory : $workflow.launchDir"
+  log.info workflow.commitId ? "Git info    : $workflow.repository - $workflow.revision [$workflow.commitId]" : "  revision  : " + this.grabRevision()
 }
 
 workflow.onComplete {
-  log.info "N E X T F L O W ~ $workflow.nextflow.version - $workflow.nextflow.build"
-  log.info "myCV compiler ~ $version - revision: $revision"
-  log.info "Command line: $workflow.commandLine"
-  log.info "Project Dir : $workflow.projectDir"
-  log.info "Launch Dir  : $workflow.launchDir"
-  log.info "Work Dir    : $workflow.workDir"
+  // Display end message
+  this.nextflowMessage()
+  this.myCVmessage()
+  this.minimalInformationMessage()
   log.info "Completed at: $workflow.complete"
   log.info "Duration    : $workflow.duration"
   log.info "Success     : $workflow.success"
   log.info "Exit status : $workflow.exitStatus"
-  log.info "Error report:" + (workflow.errorReport ?: '-')
+  log.info "Error report: " + (workflow.errorReport ?: '-')
 }
 
 workflow.onError {
-  log.info "myCV compiler"
+  // Display error message
+  this.nextflowMessage()
+  this.myCVmessage()
   log.info "Workflow execution stopped with the following message: $workflow.errorMessage"
 }
