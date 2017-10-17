@@ -63,7 +63,7 @@ process CompileCV {
   file biblio
 
   output:
-  file("*.pdf") into pdf
+  file("CV-MGarcia-latest.pdf") into pdf
 
   script:
   """
@@ -71,6 +71,7 @@ process CompileCV {
   biber ${cv.baseName}.bcf
   xelatex ${cv.baseName}.tex
   xelatex ${cv.baseName}.tex
+  mv ${cv.baseName}.pdf CV-MGarcia-latest.pdf
   """
 }
 
