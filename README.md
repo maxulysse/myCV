@@ -15,7 +15,7 @@ Based on `debian:stretch-slim`.
 
 ## Usage with Docker
 ```bash
-nextflow run MaxUlysse/myCV -profile docker
+nextflow run MaxUlysse/myCV --tex <myCV.tex>
 ```
 
 [circleci-badge]: https://circleci.com/gh/MaxUlysse/myCV.svg?style=shield

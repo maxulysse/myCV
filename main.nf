@@ -27,7 +27,7 @@ Maxime Garcia <max@ithake.eu> [@MaxUlysse]
 
 if (!nextflow.version.matches('>= 0.25.3')) exit 1, "Nextflow version 0.25.3 or greater is needed to run this workflow"
 
-version = '0.17.1013'
+version = '1.0'
 
 params.help = false
 params.version = false

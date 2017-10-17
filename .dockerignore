@@ -6,5 +6,4 @@ circle.yml
 main.nf
 nextflow.config
 *.pdf
-conf/*
 pictures/*

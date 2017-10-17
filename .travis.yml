@@ -8,10 +8,10 @@ services:
   - docker
 
 env:
-  - NXF_VER=0.25.7 PROFILE=docker TOOL_INSTALL=nextflow
+  - NXF_VER=0.25.7
 
 install: # Install Nextflow
-  - "./scripts/install.sh --tool $TOOL_INSTALL"
+  - "./scripts/install.sh"
 
 script:
-  - "./scripts/test.sh --profile $PROFILE"
+  - "./scripts/test.sh"
