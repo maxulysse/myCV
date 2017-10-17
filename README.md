@@ -29,7 +29,8 @@ nextflow run MaxUlysse/myCV --tex <myCV.tex>
 [nextflow-link]: https://www.nextflow.io/
 [travis-badge]: https://img.shields.io/travis/MaxUlysse/myCV.svg
 [travis-link]: https://travis-ci.org/MaxUlysse/myCV
-[version-link]: https://github.com/MaxUlysse/myCV/releases/latest
 [version-badge]: https://img.shields.io/github/release/MaxUlysse/myCV.svg
+[version-link]: https://github.com/MaxUlysse/myCV/releases/latest
+[works-badge]: https://img.shields.io/badge/works-on_my_machine-brightgreen.svg
 [works-link]: https://github.com/nikku/works-on-my-machine
 [xetex-link]: http://xetex.sourceforge.net/
