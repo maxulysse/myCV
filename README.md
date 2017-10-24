@@ -7,21 +7,13 @@
 [![CircleCI status][circleci-badge]][circleci-link]
 [![works on my machine][works-badge]][works-link]
 
-myCV compiler in [Nextflow][nextflow-link] using [XeLaTex][xetex-link] and [modernCV][moderncv-link]
+My own CV made with [compile-latex](https://github.com/MaxUlysse/compile-latex).
 
-## Docker container [![Docker status][docker-badge]][docker-link]
-Based on `debian:stretch-slim`.
-- Contain: `texlive-xetex`, `modernCV` and `academicons`
-
-## Usage with Docker
-```bash
-nextflow run MaxUlysse/myCV --tex <myCV.tex>
-```
+example:
+- `nextflow run MaxUlysse/compile-latex --tex CV-MGarcia-2017-10.tex`
 
 [circleci-badge]: https://circleci.com/gh/MaxUlysse/myCV.svg?style=shield
 [circleci-link]: https://circleci.com/gh/MaxUlysse/myCV
-[docker-badge]: https://img.shields.io/docker/automated/maxulysse/mycv.svg
-[docker-link]: https://hub.docker.com/r/maxulysse/mycv
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/myCV.svg
 [license-link]: https://github.com/MaxUlysse/myCV/blob/master/LICENSE
 [moderncv-link]: https://launchpad.net/moderncv
