@@ -8,7 +8,7 @@ services:
   - docker
 
 env:
-  - NXF_VER=0.25.7
+  - NXF_VER=0.26.0
 
 install: # Install Nextflow
   - "./scripts/install.sh"
