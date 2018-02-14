@@ -1,0 +1,201 @@
+%!TEX program = xelatex
+% Made with modernCV: https://github.com/xdanaux/moderncv
+
+% moderncv definition
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Use navy instead of lightblue
+\definecolor{color1}{RGB}{0,0,128}
+
+% Manage page size
+\RequirePackage[scale=0.9]{geometry}
+
+% Manage encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
+% Good bibliography
+\RequirePackage[backend=biber, doi=true]{biblatex}
+\addbibresource[datatype=bibtex]{biblio.bib}
+
+% Nice and fancy font-icons
+\RequirePackage{academicons}
+\RequirePackage{fontawesome}
+
+% Nice and fancy underlines
+\RequirePackage[normalem]{ulem}
+\RequirePackage{contour}
+\renewcommand{\ULdepth}{1.8pt}\contourlength{0.6pt}
+\newcommand{\myuline}[1]{\uline{\contour{white}{#1}}}
+\newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
+
+\newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\small{#3}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3},{#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
+\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
+
+% Author information
+% Name
+\name{Maxime}{Garcia}
+% Title
+\title{PhD in Bioinformatics}
+
+\extrainfo{
+% Date of birth
+\faCalendarO\ 1982-05-14\\
+% Phone number
+\faMobile\ +46-(0)7-237-343-36\\
+% Twitter
+\faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
+% Github
+\faGithub\ \myuline{\href{https://github.com/MaxUlysse/}{\nolinkurl{@MaxUlysse}}}\\
+% Email
+\faEnvelope\ \myuline{\href{mailto:maxime.garcia@scilifelab.se}{\nolinkurl{maxime.garcia@scilifelab.se}}}\\
+% Website
+\faGlobe\ \myurl{https://maxulysse.github.io/}}
+% Picture
+\photo[64pt][2pt]{pictures/Max}
+% Quote
+\quote{Automatization, analysis, reproductibility and visualization}
+
+\begin{document}
+
+	\makecvtitle
+
+	\section{\texorpdfstring{\faBuilding\ Experience}{Experience}}
+		\mycvitemXP{from 2016}{Bioinformatician}{The Swedish Childhood Tumor Biobank (Barntumörbanken)}{Stockholm, Sweden}
+		\mycomment{Development of a germline / tumor-normal pair analysis workflow in collaboration between SciLifeLab NGI \& NBIS;}
+		\mycomment{\faGithub\ \myurl{https://github.com/SciLifeLab/Sarek}}
+		\mycomment{Whole Genome Sequencing analysis.}
+
+		\mycvitemXP{2013-2014}{Research Associate}{Cancer Science Institute of Singapore (CSI)}{Singapore, Singapore}
+		\mycomment{RNAseq analysis; Genome Browser Development.}
+
+		\mycvitemXP{2009--2013}{PhD candidate}{Centre de Recherche en Cancérologie de Marseille (CRCM)}{Marseille, France}
+		\mycomment{Development of an Interactome-Transcriptome analysis pipeline; Intern management.}
+
+	\vfill
+
+	\section{\texorpdfstring{\faUniversity\ Education}{Education}}
+		\mycvitemEDU{2013}{PhD}{Bioinformatics and Genomics}{Aix-Marseille Université}{Marseille, France}
+
+		\mycvitemEDU{2007-2009}{Master's Degree}{Bioinformatics and Genomics}{Université Aix-Marseille II}{Marseille, France}
+
+		\mycvitemEDU{2007}{Erasmus Semester}{School of Biological Sciences}{University of East Anglia}{Norwich, UK}
+
+		\mycvitemEDU{2003-2007}{Bachelor's Degree}{Biology and Biochemistry}{Université Aix-Marseille II}{Marseille, France}
+
+	\vfill
+
+	\nocite{*}
+	\section{\texorpdfstring{\faBook\ Publications}{Publications}}
+	\printbibliography[heading=none]
+	% \printbibliography[type=article,heading=subbibliography,title={Articles}]
+	% \printbibliography[type=inbook,heading=subbibliography,title={Chapters}]
+
+	\vfill
+
+	\section{\texorpdfstring{\faLaptop\ Skills}{Skills}}
+		\cvdoubleitem{Scripting}{Groovy, Bash, Perl}{Pipeline}{Nextflow, Make}
+
+		\cvdoubleitem{Containers}{Docker, Singularity}{Management}{Github, Trello, CI}
+
+		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
+
+		\cvdoubleitem{Others}{Slack, \LaTeX, Beamer, Inkscape}{+}{Linux, Clusters, Git, R}
+
+	\clearpage
+
+	\vfill
+
+	\section{\texorpdfstring{\faCommentsO\ Presentations}{Presentations}}
+		\mycvitemPP{2011}{Mathematical and Statistical Aspects of Molecular Biology (MASAMB) XXI}{Vienna, Austria}
+
+		\mycvitemPP{2010}{Cancer Bioinformatics Workshop}{Cambridge, UK}
+
+	\vfill
+
+	\section{\texorpdfstring{\faFileImageO\ Posters}{Posters}}
+		\mycvitemPP{2017}{Department Kick Off (CCK Kick Off)}{Stockholm, Sweden}
+
+		\mycvitemPP{2017}{European Human Genetics Conference (ESHG)}{Copenhagen, Denmark}
+
+		\mycvitemPP{2016}{The XVth KI Cancer Retreat}{Djurö, Sweden}
+
+		\mycvitemPP{2013}{5th Frontiers in Cancer Science (FCS)}{Singapore, Singapore}
+
+		\mycvitemPP{2012}{11th European Conference on Computational Biology (ECCB)}{Basel, Switzerland}
+
+		\mycvitemPP{2012}{13ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Rennes, France}
+
+		\mycvitemPP{2012}{6ème Colloque du Cancéropôle PACA}{Marseille, France}
+
+		\mycvitemPP{2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Paris, France}
+
+		\mycvitemPP{2011}{19th meeting of doctoral school}{Marseille, France}
+
+		\mycvitemPP{2010}{Biologistes Chimistes et Physiciens (BCP) VII}{Marseille, France}
+
+		\mycvitemPP{2010}{Interactomics: at the crossroads of biology and bioinformatics}{St Raphaël, France}
+
+	\vfill
+
+	\section{\texorpdfstring{\faUniversity\ Fellowhips}{Fellowhips}}
+		\mycvitemcomment{2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}{}
+
+		\mycvitemcomment{2011}{Travel grant from MASAMB organisation}{}
+
+		\mycvitemcomment{2009}{PhD fellowhip from INSERM/Région PACA}{}
+
+	\vfill
+
+	\section{\texorpdfstring{\faGroup\ Associations}{Associations}}
+		\mycvitemcomment{from 2012}{Contributor to \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
+
+		\mycvitemcomment{2012-2014}{Vice-president of JeBiF - RSG-France}{(Association of French Young Bioinformaticians)}
+
+		\mycvitemcomment{2010-2011}{President of Hippo'Thèse}{(Association of young researchers in Biology at Aix-Marseille University)}
+
+		\mycvitemcomment{2010-2011}{Vice-president \&\ Webmaster of BIOTechno Network}{}
+
+		\mycomment{\hfill(French Network of Associations organizing forums about careers in Biotechnology)}
+
+		\mycvitemcomment{2009-2010}{Webmaster of Hippo'Thèse}{}
+
+	% \vfill
+	% \section{Scientific Societies}
+	% 	\cvitem{ISCB}{Member of International Society of Computational Biology}
+	% 	\cvitem{SFBI}{Member of Société Française de BioInformatique}
+	% 	\cvitem{CFD}{Member of Communauté Française des Docteurs}
+
+	\vfill
+
+	\section{\texorpdfstring{\faList\ Organization and Events}{Organization and Events}}
+		\mycvitemcomment{2015}{Journées nationales de la CFD}{(Webmaster, Member of organization committee)}
+
+		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee and logistic support)}
+
+		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and animation of a stand)}
+
+		\mycvitemcomment{2011}{7th BIOTechno forum in Marseille}{(Head of organization committee)}
+
+		\mycvitemcomment{2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University}{}
+
+		\mycomment{\hfill(Member of organization committee, abstract selection, jury member, logistic support)}
+
+		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support in organization)}
+
+	\vfill
+
+	\section{\texorpdfstring{\faCommentO\ Languages}{Languages}}
+		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
+
+	\vfill
+
+	\section{\texorpdfstring{\faInfoCircle\ Interests}{Interests}}
+		\cvitem{}{Yoga, Running, Cinema, Poker, Gardening, Ice-Skating, Science-Fiction, Popular science}
+
+\end{document}
