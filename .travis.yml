@@ -1,17 +1,19 @@
 sudo: required
-
 language: java
-
 jdk: openjdk8
-
-services:
-  - docker
+services: docker
 
 env:
-  - NXF_VER=0.27.0
+  - NXF_VER=0.30.2
+  - NXF_VER=''
 
-install: # Install Nextflow
-  - "./scripts/install.sh"
+before_install:
+  - docker pull maxulysse/compile-latex:2.0
+
+install:
+  - curl -fsSL get.nextflow.io | bash
+  - chmod +x nextflow
+  - sudo mv nextflow /usr/local/bin/
 
 script:
-  - "./scripts/test.sh"
+  - nextflow run ../compile-latex --tex "*/*.tex" --outDir .
