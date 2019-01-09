@@ -6,8 +6,8 @@
 \moderncvstyle{classic}
 \moderncvcolor{blue}
 
-% Use navy instead of lightblue
-\definecolor{color1}{RGB}{0,0,128}
+% Use Dark blue instead of lightblue
+\definecolor{color1}{RGB}{0,0,139}
 
 % Manage page size
 \RequirePackage[scale=0.9]{geometry}
@@ -17,7 +17,7 @@
 \RequirePackage[english]{babel}
 
 % Good bibliography
-\RequirePackage[backend=biber, doi=true]{biblatex}
+\RequirePackage[backend=biber, doi=true, sorting=ydnt]{biblatex}
 \addbibresource[datatype=bibtex]{biblio.bib}
 
 % Nice and fancy font-icons
@@ -33,7 +33,7 @@
 
 \newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
 \newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\small{#3}}}
-\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3},{#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
 \newcommand{\mycvitemPP}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
 \newcommand{\mycvitemXP}[4]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
 
@@ -44,18 +44,18 @@
 \title{PhD in Bioinformatics}
 
 \extrainfo{
-% Date of birth
-\faCalendar\ 1982-05-14\\
-% Phone number
-\faMobile\ +46-(0)7-237-343-36\\
-% Twitter
-\faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
-% Github
-\faGithub\ \myuline{\href{https://github.com/MaxUlysse/}{\nolinkurl{@MaxUlysse}}}\\
-% Email
-\faEnvelope\ \myuline{\href{mailto:maxime.garcia@scilifelab.se}{\nolinkurl{maxime.garcia@scilifelab.se}}}\\
-% Website
-\faGlobe\ \myurl{https://maxulysse.github.io/}}
+	% Twitter
+	\faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
+	% Github
+	\faGithub\ \myuline{\href{https://github.com/MaxUlysse/}{\nolinkurl{@MaxUlysse}}}\\
+	% Email
+	\faEnvelope\ \myuline{\href{mailto:maxime.garcia@scilifelab.se}{\nolinkurl{maxime.garcia@scilifelab.se}}}\\
+	% Website
+	\faGlobe\ \myurl{https://maxulysse.github.io/}\\
+	% ORCID
+	\aiOrcid\ \myuline{\href{https://orcid.org/0000-0003-2827-9261}{\nolinkurl{0000-0003-2827-9261}}}
+}
+
 % Picture
 \photo[64pt][2pt]{pictures/Max}
 % Quote
@@ -66,9 +66,9 @@
 	\makecvtitle
 
 	\section{\texorpdfstring{\faBuilding\ Experience}{Experience}}
-		\mycvitemXP{from 2016}{Bioinformatician}{The Swedish Childhood Tumor Biobank (Barntumörbanken)}{Stockholm, Sweden}
-		\mycomment{Development of a WGS Germline/Somatic analysis workflow in collaboration between SciLifeLab NGI \& NBIS;}
+		\mycvitemXP{From 2016}{Bioinformatician}{Barntumörbanken | Karolinska Institutet}{Stockholm, Sweden}
 		\mycomment{\faGithub\ \myurl{https://github.com/SciLifeLab/Sarek}}
+		\mycomment{Development of a WGS Germline/Somatic analysis workflow in collaboration between SciLifeLab NGI \& NBIS;}
 		\mycomment{Whole Genome Sequencing analysis.}
 
 		\mycvitemXP{2013-2014}{Research Associate}{Cancer Science Institute of Singapore (CSI)}{Singapore, Singapore}
@@ -99,32 +99,38 @@
 	\vfill
 
 	\section{\texorpdfstring{\faLaptop\ Skills}{Skills}}
-		\cvdoubleitem{Scripting}{Groovy, Bash, Perl}{Pipeline}{Nextflow, Make}
-		\cvdoubleitem{Containers}{Singularity, Docker}{Management}{Github, Trello}
+		\cvdoubleitem{Scripting}{Groovy, Bash, Python, Perl, Java, R}{Pipeline}{Nextflow}
+		\cvdoubleitem{Containers}{Singularity, Docker, Bioconda}{Management}{Github, Trello, Slack}
 		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
-		\cvdoubleitem{Others}{Slack, \LaTeX, Beamer, Inkscape}{+}{Linux, Clusters, Git, CI, R}
+		\cvdoubleitem{Others}{Inkscape, \LaTeX, Beamer, Markdown}{+}{Linux, Clusters, Git, CI}
 
 	\clearpage
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentsO\ Presentations}{Presentations}}
+	\section{\texorpdfstring{\faComments\ Presentations}{Presentations}}
+		\mycvitemPP{2018}{19ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Marseille, France}
+
 		\mycvitemPP{2018}{SPHN Workflow Interoperability Workshop}{Basel, Switzerland}
 
-		\mycvitemPP{2011}{Mathematical and Statistical Aspects of Molecular Biology (MASAMB) XXI}{Vienna, Austria}
+		\mycvitemPP{2011}{Mathematical and Statistical Aspects of Molecular Biology XXI}{Vienna, Austria}
 
 		\mycvitemPP{2010}{Cancer Bioinformatics Workshop}{Cambridge, UK}
 
 	\vfill
 
-	\section{\texorpdfstring{\faFileImageO\ Posters}{Posters}}
+	\section{\texorpdfstring{\faFileImage\ Selected Posters}{Selected Posters}}
+		% \mycvitemPP{2018}{Department of Oncology-Pathology Kick Off}{Stockholm, Sweden}
+
+		\mycvitemPP{2018}{Keystone Symposia Precision Medecine in Cancer}{Stockholm, Sweden}
+
 		\mycvitemPP{2018}{Frontiers in Cancer Research and Therapy 2018}{Stockholm, Sweden}
 
-		\mycvitemPP{2017}{Department Kick Off (CCK Kick Off)}{Stockholm, Sweden}
+		% \mycvitemPP{2017}{Department of Oncology-Pathology Kick Off}{Stockholm, Sweden}
 
 		\mycvitemPP{2017}{European Human Genetics Conference (ESHG)}{Copenhagen, Denmark}
 
-		\mycvitemPP{2017}{Frontiers in Cancer Research and Therapy 2017}{Stockholm, Sweden}
+		% \mycvitemPP{2017}{Frontiers in Cancer Research and Therapy 2017}{Stockholm, Sweden}
 
 		\mycvitemPP{2016}{The XVth KI Cancer Retreat}{Djurö, Sweden}
 
@@ -138,11 +144,11 @@
 
 		\mycvitemPP{2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Paris, France}
 
-		\mycvitemPP{2011}{19th meeting of doctoral school}{Marseille, France}
-
-		\mycvitemPP{2010}{Biologistes Chimistes et Physiciens (BCP) VII}{Marseille, France}
-
-		\mycvitemPP{2010}{Interactomics: at the crossroads of biology and bioinformatics}{St Raphaël, France}
+		% \mycvitemPP{2011}{19th meeting of doctoral school}{Marseille, France}
+    %
+		% \mycvitemPP{2010}{Biologistes Chimistes et Physiciens VII}{Marseille, France}
+    %
+		% \mycvitemPP{2010}{Interactomics: at the crossroads of biology and bioinformatics}{St Raphaël, France}
 
 	\vfill
 
@@ -154,7 +160,7 @@
 	\vfill
 
 	\section{\texorpdfstring{\faGroup\ Associations}{Associations}}
-		\mycvitemcomment{from 2012}{Contributor to \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
+		\mycvitemcomment{from 2012}{Contributor to \faGlobe\ \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
 
 		\mycvitemcomment{2012-2014}{Vice-president of JeBiF - RSG-France}{(Association of French Young Bioinformaticians)}
 
@@ -168,30 +174,31 @@
 
 	% \vfill
 	% \section{Scientific Societies}
-	% 	\cvitem{ISCB}{Member of International Society of Computational Biology}
-	% 	\cvitem{SFBI}{Member of Société Française de BioInformatique}
 	% 	\cvitem{CFD}{Member of Communauté Française des Docteurs}
+	% 	\cvitem{ISCB}{Member of International Society of Computational Biology}
+	% 	\cvitem{JeBiF}{Member of Jeunes Bioinformaticiens de France}
+	% 	\cvitem{SFBI}{Member of Société Française de BioInformatique}
 
 	\vfill
 
 	\section{\texorpdfstring{\faList\ Organization and Events}{Organization and Events}}
-		\mycvitemcomment{2015}{Journées nationales de la CFD}{(Webmaster, Member of organization committee)}
+		\mycvitemcomment{2015}{Journées nationales de la CFD}{(Member of organization committee and Webmaster)}
 
-		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee and logistic support)}
+		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee)}
 
-		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and animation of a stand)}
+		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and Animation of a stand)}
 
 		\mycvitemcomment{2011}{7th BIOTechno forum in Marseille}{(Head of organization committee)}
 
 		\mycvitemcomment{2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University}{}
 
-		\mycomment{\hfill(Member of organization committee, abstract selection, jury member, logistic support)}
+		\mycomment{\hfill(Member of organization committee)}
 
-		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support in organization)}
+		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support)}
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentO\ Languages}{Languages}}
+	\section{\texorpdfstring{\faComment\ Languages}{Languages}}
 		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
 
 	\vfill

@@ -4,7 +4,7 @@ jdk: openjdk8
 services: docker
 
 env:
-  - NXF_VER=0.32.0
+  - NXF_VER=18.10.1
   - NXF_VER=''
 
 before_install:
