@@ -19,10 +19,12 @@
 % Good bibliography
 \RequirePackage[backend=biber, doi=true, sorting=ydnt]{biblatex}
 \addbibresource[datatype=bibtex]{biblio.bib}
+\RequirePackage{csquotes}
 
 % Nice and fancy font-icons
 \RequirePackage{academicons}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
+\RequirePackage{fontspec}
 
 % Nice and fancy underlines
 \RequirePackage[normalem]{ulem}
@@ -32,10 +34,10 @@
 \newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
 
 \newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
-\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\small{#3}}}
-\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
-\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
-\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\small{#3}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
+\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
 
 % Author information
 % Name
@@ -45,7 +47,7 @@
 
 \extrainfo{
 	% Date of birth
-	\faCalendarO\ 1982-05-14\\
+	\faCalendar\ 1982-05-14\\
 	% Phone number
 	\faMobile\ +46-(0)7-237-343-36\\
 	% Twitter
@@ -64,7 +66,7 @@
 
 \begin{document}
 
-	\makecvtitle
+\makecvtitle
 
 	\section{\texorpdfstring{\faBuilding\ Experience}{Experience}}
 		\mycvitemXP{2016-2018}{Bioinformatician}{Barntumörbanken | Karolinska Institutet}{Stockholm, Sweden}
@@ -109,7 +111,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentsO\ Presentations}{Presentations}}
+	\section{\texorpdfstring{\faComments\ Presentations}{Presentations}}
 		\mycvitemPP{2018}{19ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Marseille, France}
 
 		\mycvitemPP{2018}{SPHN Workflow Interoperability Workshop}{Basel, Switzerland}
@@ -120,7 +122,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faFileImageO\ Selected Posters}{Selected Posters}}
+	\section{\texorpdfstring{\faFileImage\ Selected Posters}{Selected Posters}}
 		\mycvitemPP{2018}{Keystone Symposia Precision Medecine in Cancer}{Stockholm, Sweden}
 
 		\mycvitemPP{2018}{Frontiers in Cancer Research and Therapy 2018}{Stockholm, Sweden}
@@ -158,7 +160,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faGroup\ Associations}{Associations}}
+	\section{\texorpdfstring{\faUsers\ Associations}{Associations}}
 		\mycvitemcomment{from 2012}{Contributor to \faGlobe\ \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
 
 		\mycvitemcomment{2012-2014}{Vice-president of JeBiF - RSG-France}{(Association of French Young Bioinformaticians)}
@@ -196,7 +198,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentO\ Languages}{Languages}}
+	\section{\texorpdfstring{\faComment\ Languages}{Languages}}
 		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
 
 	\vfill
