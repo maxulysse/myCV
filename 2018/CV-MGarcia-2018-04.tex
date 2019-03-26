@@ -22,7 +22,8 @@
 
 % Nice and fancy font-icons
 \RequirePackage{academicons}
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
+\RequirePackage{fontspec}
 
 % Nice and fancy underlines
 \RequirePackage[normalem]{ulem}
@@ -32,10 +33,10 @@
 \newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
 
 \newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
-\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\small{#3}}}
-\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
-\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendarO\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
-\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendarO\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\small{#3}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
+\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
 
 % Author information
 % Name
@@ -45,7 +46,7 @@
 
 \extrainfo{
 	% Date of birth
-	\faCalendarO\ 1982-05-14\\
+	\faCalendar\ 1982-05-14\\
 	% Phone number
 	\faMobile\ +46-(0)7-237-343-36\\
 	% Twitter
@@ -109,7 +110,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentsO\ Presentations}{Presentations}}
+	\section{\texorpdfstring{\faComments\ Presentations}{Presentations}}
 		\mycvitemPP{2018}{SPHN Workflow Interoperability Workshop}{Basel, Switzerland}
 
 		\mycvitemPP{2011}{Mathematical and Statistical Aspects of Molecular Biology XXI}{Vienna, Austria}
@@ -118,7 +119,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faFileImageO\ Posters}{Posters}}
+	\section{\texorpdfstring{\faFileImage\ Posters}{Posters}}
 		\mycvitemPP{2018}{Frontiers in Cancer Research and Therapy 2018}{Stockholm, Sweden}
 
 		\mycvitemPP{2017}{Department of Oncology-Pathology Kick Off}{Stockholm, Sweden}
@@ -154,7 +155,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faGroup\ Associations}{Associations}}
+	\section{\texorpdfstring{\faUsers\ Associations}{Associations}}
 		\mycvitemcomment{from 2012}{Contributor to \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
 
 		\mycvitemcomment{2012-2014}{Vice-president of JeBiF - RSG-France}{(Association of French Young Bioinformaticians)}
@@ -192,7 +193,7 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faCommentO\ Languages}{Languages}}
+	\section{\texorpdfstring{\faComment\ Languages}{Languages}}
 		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
 
 	\vfill
