@@ -16,4 +16,4 @@ install:
   - sudo mv nextflow /usr/local/bin/
 
 script:
-  - nextflow run MaxUlysse/compile-latex --tex "*/*.tex" --outDir .
+  - nextflow run maxulysse/compile-latex --tex "*/*.tex" --outDir .
