@@ -7,6 +7,7 @@
 My own CV made with [compile-latex](https://github.com/MaxUlysse/compile-latex).
 
 example:
+
 - `nextflow run MaxUlysse/compile-latex --tex CV-MGarcia-2017-10.tex`
 
 [license-badge]: https://img.shields.io/github/license/MaxUlysse/myCV.svg
