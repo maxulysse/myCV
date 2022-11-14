@@ -1,0 +1,223 @@
+%!TEX program = xelatex
+% Made with modernCV: https://github.com/xdanaux/moderncv
+
+% moderncv definition
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Use Dark blue instead of lightblue
+\definecolor{color1}{RGB}{0,0,139}
+
+% Manage page size
+\RequirePackage[scale=0.9]{geometry}
+
+% Manage encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
+% Good bibliography
+\RequirePackage[backend=biber, doi=true, sorting=ydnt]{biblatex}
+\addbibresource[datatype=bibtex]{biblio.bib}
+\RequirePackage{csquotes}
+
+% Nice and fancy font-icons
+\RequirePackage{academicons}
+\RequirePackage{fontawesome5}
+\RequirePackage{fontspec}
+
+% Nice and fancy underlines
+\RequirePackage[normalem]{ulem}
+\RequirePackage{contour}
+\renewcommand{\ULdepth}{1.8pt}\contourlength{0.6pt}
+\newcommand{\myuline}[1]{\uline{\contour{white}{#1}}}
+\newcommand{\myurl}[1]{\myuline{\url{{#1}}}}
+
+\newcommand{\mycomment}[1]{\cvitem{}{\small{#1}}}
+\newcommand{\mycvitemcomment}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\small{#3}}}
+\newcommand{\mycvitemEDU}[5]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}, {#4}\hfill\faMapMarker\ {#5}}}
+\newcommand{\mycvitemPP}[3]{\cvitem{\faCalendar\hfill{#1}}{{#2}\hfill\faMapMarker\ {#3}}}
+\newcommand{\mycvitemXP}[4]{\cvitem{\faCalendar\hfill{#1}}{\textbf{#2}, \textit{#3}\hfill\faMapMarker\ {#4}}}
+
+% Author information
+% Name
+\name{Maxime}{Garcia}
+% Title
+\title{PhD in Bioinformatics}
+
+\extrainfo{
+	% Date of birth
+	\faCalendar\ 1982-05-14\\
+	% Phone number
+	\faMobile\ +46-(0)7-237-343-36\\
+	% % Twitter
+	% \faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
+	% Github
+	\faGithub\ \myuline{\href{https://github.com/maxulysse/}{\nolinkurl{@maxulysse}}}\\
+	% Email
+	\faEnvelope\ \myuline{\href{mailto:maxime.garcia@seqera.io}{\nolinkurl{maxime.garcia@seqera.io}}}\\
+	% Website
+	\faGlobeEurope\ \myurl{https://maxulysse.github.io/}
+}
+% Picture
+\photo[64pt][2pt]{pictures/max_2020}
+% Quote
+\quote{Automatization, analysis, reproductibility and visualization}
+
+\begin{document}
+
+\makecvtitle
+
+	\section{\texorpdfstring{\faBuilding\ Experience}{Experience}}
+		\mycvitemXP{From 2022}{Bioinformatician}{Scientific Development | Seqera Labs}{Barcelona, Spain}
+		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core}{\nolinkurl{nf-core}}} - Pipeline development;}
+		\mycomment{\faGlobeEurope\ \myuline{\href{https://nf-co.re/}{\nolinkurl{nf-co.re}}} - In the core team that administer the nf-core project;}
+		\mycvitemXP{2016--2022}{Bioinformatician}{Barntumörbanken | Karolinska Institutet \& NGI | ScilifeLab}{Stockholm, Sweden}
+		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/sarek}{\nolinkurl{nf-core/sarek}}} - Whole Genome/Targeted Sequencing Germline/Somatic analysis;}
+		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/rnafusion}{\nolinkurl{nf-core/rnafusion}}} - RNA-fusion analysis;}
+		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/rnavar}{\nolinkurl{nf-core/rnavar}}} - RNA-seq variant analysis;}
+		\mycomment{\faGlobeEurope\ \myuline{\href{https://nf-co.re/}{\nolinkurl{nf-co.re}}} - In the core team that administer the nf-core project;}
+
+		\mycvitemXP{2013--2014}{Research Associate}{Cancer Science Institute of Singapore (CSI)}{Singapore, Singapore}
+		\mycomment{RNAseq analysis; Genome Browser Development.}
+
+		\mycvitemXP{2009--2013}{PhD candidate}{Centre de Recherche en Cancérologie de Marseille (CRCM)}{Marseille, France}
+		\mycomment{Development of an Interactome-Transcriptome analysis pipeline; Intern management.}
+
+	\vfill
+
+	\section{\texorpdfstring{\faUniversity\ Education}{Education}}
+		\mycvitemEDU{2013}{PhD}{Bioinformatics and Genomics}{Aix-Marseille Université}{Marseille, France}
+
+		\mycvitemEDU{2007--2009}{Master's Degree}{Bioinformatics and Genomics}{Université Aix-Marseille II}{Marseille, France}
+
+		\mycvitemEDU{2007}{Erasmus Semester}{School of Biological Sciences}{University of East Anglia}{Norwich, UK}
+
+		\mycvitemEDU{2003-2007}{Bachelor's Degree}{Biology and Biochemistry}{Université Aix-Marseille II}{Marseille, France}
+
+	\vfill
+
+	\nocite{*}
+	\section{\texorpdfstring{\faBook\ Selected Publications}{Selected Publications}}
+	\printbibliography[heading=none]
+	% \printbibliography[type=article,heading=subbibliography,title={Articles}]
+	% \printbibliography[type=inbook,heading=subbibliography,title={Chapters}]
+
+	\vfill
+
+	\section{\texorpdfstring{\faLaptop\ Skills}{Skills}}
+		\cvdoubleitem{Scripting}{Groovy, Bash, R}{Pipeline}{Nextflow}
+		\cvdoubleitem{Containers}{Singularity, Docker, Bioconda}{Management}{Github, Trello, Slack}
+		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
+		\cvdoubleitem{Others}{Inkscape, \LaTeX, Gather.town, Markdown}{+}{Linux, Clusters, Git, CI}
+
+	\clearpage
+
+	\vfill
+
+	\section{\texorpdfstring{\faComments\ Selected Presentations}{Selected Presentations}}
+		\mycvitemPP{2020}{20ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Montpellier, France}
+
+		\mycvitemPP{2019}{4th Scandinavian Seminar on Translational Pathology}{Bergen, Norway}
+
+		\mycvitemPP{2018}{FoUU-day for clinical pathology-cytology}{Stockholm, Sweden}
+
+		\mycvitemPP{2018}{19ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Marseille, France}
+
+		\mycvitemPP{2018}{SPHN Workflow Interoperability Workshop}{Basel, Switzerland}
+
+		% \mycvitemPP{2011}{Mathematical and Statistical Aspects of Molecular Biology XXI}{Vienna, Austria}
+
+		\mycvitemPP{2010}{Cancer Bioinformatics Workshop}{Cambridge, UK}
+
+	\vfill
+
+	\section{\texorpdfstring{\faFileImage\ Selected Posters}{Selected Posters}}
+		\mycvitemPP{2018}{Keystone Symposia Precision Medecine in Cancer}{Stockholm, Sweden}
+
+		\mycvitemPP{2018}{Frontiers in Cancer Research and Therapy 2018}{Stockholm, Sweden}
+
+		% \mycvitemPP{2017}{Department of Oncology-Pathology Kick Off}{Stockholm, Sweden}
+
+		\mycvitemPP{2017}{European Human Genetics Conference (ESHG)}{Copenhagen, Denmark}
+
+		% \mycvitemPP{2017}{Frontiers in Cancer Research and Therapy 2017}{Stockholm, Sweden}
+
+		\mycvitemPP{2016}{The XVth KI Cancer Retreat}{Djurö, Sweden}
+
+		\mycvitemPP{2013}{5th Frontiers in Cancer Science (FCS)}{Singapore, Singapore}
+
+		\mycvitemPP{2012}{11th European Conference on Computational Biology (ECCB)}{Basel, Switzerland}
+
+		\mycvitemPP{2012}{13ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Rennes, France}
+
+		% \mycvitemPP{2012}{6ème Colloque du Cancéropôle PACA}{Marseille, France}
+
+		\mycvitemPP{2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Paris, France}
+
+		% \mycvitemPP{2011}{19th meeting of doctoral school}{Marseille, France}
+
+		% \mycvitemPP{2010}{Biologistes Chimistes et Physiciens VII}{Marseille, France}
+
+		% \mycvitemPP{2010}{Interactomics: at the crossroads of biology and bioinformatics}{St Raphaël, France}
+
+	\vfill
+
+	% \section{\texorpdfstring{\faUniversity\ Fellowhips}{Fellowhips}}
+		% \mycvitemcomment{2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}{}
+		% \mycvitemcomment{2011}{Travel grant from MASAMB organisation}{}
+	% 	\mycvitemcomment{2009}{PhD fellowhip from INSERM/Région PACA}{}
+
+	% \vfill
+	
+	\section{\texorpdfstring{\faList\ Organization and Events}{Organization and Events}}
+	\mycvitemcomment{From 2018}{nf-core/hackathon}{(Member of organization committee)}
+	
+	\mycvitemcomment{2015}{Journées nationales de la CFD}{(Member of organization committee and Webmaster)}
+
+		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee)}
+
+		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and Animation of a stand)}
+
+		\mycvitemcomment{2011}{7th BIOTechno forum in Marseille}{(Head of organization committee)}
+
+		\mycvitemcomment{2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University}{}
+
+		\mycomment{\hfill(Member of organization committee)}
+		
+		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support)}
+
+	\vfill
+	
+	\section{\texorpdfstring{\faUsers\ Associations}{Associations}}
+		\mycvitemcomment{2012-2019}{Contributor to \faGlobeEurope\ \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
+
+		\mycvitemcomment{2012-2014}{Vice-president of JeBiF - RSG-France}{(Association of French Young Bioinformaticians)}
+
+		\mycvitemcomment{2010-2011}{President of Hippo'Thèse}{(Association of young researchers in Biology at Aix-Marseille University)}
+
+		\mycvitemcomment{2010-2011}{Vice-president \&\ Webmaster of BIOTechno Network}{}
+
+		\mycomment{\hfill(French Network of Associations organizing forums about careers in Biotechnology)}
+
+		\mycvitemcomment{2009-2010}{Webmaster of Hippo'Thèse}{}
+
+	\vfill
+
+	% \section{Scientific Societies}
+	% 	\cvitem{BioinfoDiag}{Member of Réseau Français de Bioinformatique pour le Diagnostic}
+	% 	\cvitem{ISCB}{Member of International Society of Computational Biology}
+	% 	\cvitem{SFBI}{Member of Société Française de BioInformatique}
+	% 	\cvitem{CFD}{Member of Communauté Française des Docteurs}
+
+	% \vfill
+
+	\section{\texorpdfstring{\faComment\ Languages}{Languages}}
+	\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
+
+	\vfill
+	
+	\section{\texorpdfstring{\faInfoCircle\ Interests}{Interests}}
+	\cvitem{}{Yoga, Cinema, Board-Games, Gardening, Video-Games, Science-Fiction, Popular science}
+	
+\end{document}
