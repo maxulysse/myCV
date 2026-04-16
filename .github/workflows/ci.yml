@@ -20,11 +20,10 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Install Nextflow
-        run: |
-          curl -fsSL get.nextflow.io | bash
-          chmod +x nextflow
-          sudo mv nextflow /usr/local/bin/
+      - name: Set up Nextflow
+        uses: nf-core/setup-nextflow@v2
+        with:
+          version: "25.10.4"
 
-      - name: Compile all CV versions
-        run: nextflow run maxulysse/compile-latex -r dev -profile docker --input "*/*.tex" --outdir .
+      - name: Compile latest CV
+        run: nextflow run maxulysse/compile-latex -r 3.0.0 -profile docker --input CV-MGarcia-latest --pictures pictures/ --biblio biblio.bib --outdir .
