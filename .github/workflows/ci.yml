@@ -26,4 +26,14 @@ jobs:
           version: "25.10.4"
 
       - name: Compile latest CV
-        run: nextflow run maxulysse/compile-latex -r 3.0.0 -profile docker --input CV-MGarcia-latest --pictures pictures/ --biblio biblio.bib --outdir .
+        run: nextflow run maxulysse/compile-latex -r 3.0.0 -profile docker --input CV-MGarcia.tex --pictures pictures/ --biblio biblio.bib --outdir .
+
+      - name: Commit and push to latest branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout -B latest
+          git add CV-MGarcia-latest.pdf
+          git commit -m "Update CV - $(date +%Y-%m-%d)"
+          git push -f origin latest
