@@ -26,7 +26,7 @@ jobs:
           version: "25.10.4"
 
       - name: Compile latest CV
-        run: nextflow run maxulysse/compile-latex -r 3.0.0 -profile docker --input CV-MGarcia.tex --pictures pictures/ --biblio biblio.bib --outdir .
+        run: nextflow run maxulysse/compile-latex -r 3.0.0 -profile docker --outdir .
 
       - name: Commit and push to latest branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
