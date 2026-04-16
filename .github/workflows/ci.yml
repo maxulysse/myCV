@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Install Nextflow
+        run: |
+          curl -fsSL get.nextflow.io | bash
+          chmod +x nextflow
+          sudo mv nextflow /usr/local/bin/
+
+      - name: Compile all CV versions
+        run: nextflow run maxulysse/compile-latex -r dev -profile docker --input "*/*.tex" --outdir .
