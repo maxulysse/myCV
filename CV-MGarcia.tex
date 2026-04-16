@@ -3,11 +3,10 @@
 
 % moderncv definition
 \documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle{classic}
-\moderncvcolor{blue}
 
-% Use Dark blue instead of lightblue
 \definecolor{color1}{RGB}{0,0,139}
+
+\moderncvstyle{classic}
 
 % Manage page size
 \RequirePackage[scale=0.9]{geometry}
@@ -50,8 +49,8 @@
 	\faCalendar\ 1982-05-14\\
 	% Phone number
 	\faMobile\ +46-(0)7-237-343-36\\
-	% Twitter
-	\faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
+	% % Twitter
+	% \faTwitter\ \myuline{\href{https://twitter.com/gau/}{\nolinkurl{@gau}}}\\
 	% Github
 	\faGithub\ \myuline{\href{https://github.com/maxulysse/}{\nolinkurl{@maxulysse}}}\\
 	% Email
@@ -60,7 +59,7 @@
 	\faGlobeEurope\ \myurl{https://maxulysse.github.io/}
 }
 % Picture
-\photo[64pt][2pt]{pictures/max_2020}
+\photo[64pt][2pt]{pictures/maxulysse}
 % Quote
 \quote{Automatization, analysis, reproductibility and visualization}
 
@@ -69,17 +68,21 @@
 \makecvtitle
 
 	\section{\texorpdfstring{\faBuilding\ Experience}{Experience}}
-		\mycvitemXP{From 2016}{Bioinformatician}{Barntumörbanken | Karolinska Institutet}{Stockholm, Sweden}
-		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/sarek}{\nolinkurl{nf-core/sarek}}} - Development of a Whole Genome/Targeted Sequencing Germline/Somatic analysis workflow in collaboration with SciLifeLab NGI \& NBIS;}
-		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/rnafusion}{\nolinkurl{nf-core/rnafusion}}} - Development of a RNA-fusion analysis workflow in collaboration with SciLifeLab NGI;}
-		\mycomment{\faGithub\ \myuline{\href{https://github.com/nf-core/rnavar}{\nolinkurl{nf-core/rnavar}}} - Development of a RNA-seq analysis workflow;}
-		\mycomment{\faGlobeEurope\ \myuline{\href{https://nf-co.re/}{\nolinkurl{nf-co.re}}} - In the Core team that administer the nf-core project;}
+		\mycvitemXP{From 2025}{Bioinformatician}{NGI | ScilifeLab}{Stockholm, Sweden}
+			\mycomment{Analysis; Data delivery; Infrastructure deployment.}
+			\mycomment{Pipeline development; Community management; Community outreach. (\faGithub\ \myuline{\href{https://github.com/nf-core}{\nolinkurl{nf-core}}})}
+		\mycvitemXP{2022--2025}{Bioinformatician}{Scientific Development | Seqera Labs}{Barcelona, Spain}
+			\mycomment{Pipeline development; Community management; Community outreach. (\faGithub\ \myuline{\href{https://github.com/nf-core}{\nolinkurl{nf-core}}})}
+		\mycvitemXP{2016--2022}{Bioinformatician}{Barntumörbanken | Karolinska Institutet \& NGI | ScilifeLab}{Stockholm, Sweden}
+			\mycomment{Whole Genome/Targeted Sequencing Germline/Somatic analysis (\faGithub\ \myuline{\href{https://github.com/nf-core/sarek}{\nolinkurl{nf-core/sarek}}});}
+			\mycomment{RNA-seq analysis (\faGithub\ \myuline{\href{https://github.com/nf-core/rnafusion}{\nolinkurl{nf-core/rnafusion}}} - \faGithub\ \myuline{\href{https://github.com/nf-core/rnavar}{\nolinkurl{nf-core/rnavar}}});}
+			\mycomment{Community management. (\faGithub\ \myuline{\href{https://github.com/nf-core}{\nolinkurl{nf-core}}})}
 
 		\mycvitemXP{2013--2014}{Research Associate}{Cancer Science Institute of Singapore (CSI)}{Singapore, Singapore}
-		\mycomment{RNAseq analysis; Genome Browser Development.}
+			\mycomment{RNAseq analysis; Genome Browser Development.}
 
 		\mycvitemXP{2009--2013}{PhD candidate}{Centre de Recherche en Cancérologie de Marseille (CRCM)}{Marseille, France}
-		\mycomment{Development of an Interactome-Transcriptome analysis pipeline; Intern management.}
+			\mycomment{Development of an Interactome-Transcriptome analysis pipeline; Intern management.}
 
 	\vfill
 
@@ -95,7 +98,7 @@
 	\vfill
 
 	\nocite{*}
-	\section{\texorpdfstring{\faBook\ Publications}{Publications}}
+	\section{\texorpdfstring{\faBook\ Selected Publications}{Selected Publications}}
 	\printbibliography[heading=none]
 	% \printbibliography[type=article,heading=subbibliography,title={Articles}]
 	% \printbibliography[type=inbook,heading=subbibliography,title={Chapters}]
@@ -104,15 +107,21 @@
 
 	\section{\texorpdfstring{\faLaptop\ Skills}{Skills}}
 		\cvdoubleitem{Scripting}{Groovy, Bash, R}{Pipeline}{Nextflow}
-		\cvdoubleitem{Containers}{Singularity, Docker, Bioconda}{Management}{Github, Trello, Slack}
-		\cvdoubleitem{Web}{Jekyll, Wordpress}{+}{HTML5, CSS3, SASS, JS}
-		\cvdoubleitem{Others}{Inkscape, \LaTeX, Beamer, Markdown}{+}{Linux, Clusters, Git, CI}
+		\cvdoubleitem{reproductibility}{Docker, Bioconda, Apptainer}{Management}{Github, Jira, Slack}
+		\cvdoubleitem{Web}{Astro}{+}{HTML5, CSS3, SASS, JS}
+		\cvdoubleitem{Others}{Inkscape, \LaTeX, Workadventure}{+}{Linux, Clusters, Git, CI}
 
 	\clearpage
 
 	\vfill
 
 	\section{\texorpdfstring{\faComments\ Selected Presentations}{Selected Presentations}}
+		\mycvitemPP{2024}{24ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Toulouse, France}
+
+		\mycvitemPP{2023}{Nextflow Summit}{Boston, USA}
+
+		\mycvitemPP{2023}{Nextflow Summit}{Barcelona, Spain}
+
 		\mycvitemPP{2020}{20ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Montpellier, France}
 
 		\mycvitemPP{2019}{4th Scandinavian Seminar on Translational Pathology}{Bergen, Norway}
@@ -130,6 +139,8 @@
 	\vfill
 
 	\section{\texorpdfstring{\faFileImage\ Selected Posters}{Selected Posters}}
+		\mycvitemPP{2025}{Nextflow Summit}{Boston, USA}
+
 		\mycvitemPP{2018}{Keystone Symposia Precision Medecine in Cancer}{Stockholm, Sweden}
 
 		\mycvitemPP{2018}{Frontiers in Cancer Research and Therapy 2018}{Stockholm, Sweden}
@@ -142,13 +153,13 @@
 
 		\mycvitemPP{2016}{The XVth KI Cancer Retreat}{Djurö, Sweden}
 
-		\mycvitemPP{2013}{5th Frontiers in Cancer Science (FCS)}{Singapore, Singapore}
+		% \mycvitemPP{2013}{5th Frontiers in Cancer Science (FCS)}{Singapore, Singapore}
 
 		\mycvitemPP{2012}{11th European Conference on Computational Biology (ECCB)}{Basel, Switzerland}
 
 		\mycvitemPP{2012}{13ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Rennes, France}
 
-		\mycvitemPP{2012}{6ème Colloque du Cancéropôle PACA}{Marseille, France}
+		% \mycvitemPP{2012}{6ème Colloque du Cancéropôle PACA}{Marseille, France}
 
 		\mycvitemPP{2011}{12ème Journées Ouvertes en Biologie Informatique et Mathématiques (JOBIM)}{Paris, France}
 
@@ -160,13 +171,32 @@
 
 	\vfill
 
-	\section{\texorpdfstring{\faUniversity\ Fellowhips}{Fellowhips}}
+	% \section{\texorpdfstring{\faUniversity\ Fellowhips}{Fellowhips}}
 		% \mycvitemcomment{2012}{ECCB’12 Conference Fellowship from SIB Swiss Institute of Bioinformatics}{}
 		% \mycvitemcomment{2011}{Travel grant from MASAMB organisation}{}
-		\mycvitemcomment{2009}{PhD fellowhip from INSERM/Région PACA}{}
+	% 	\mycvitemcomment{2009}{PhD fellowhip from INSERM/Région PACA}{}
+
+	% \vfill
+	
+	\section{\texorpdfstring{\faList\ Organization and Events}{Organization and Events}}
+	\mycvitemcomment{From 2018}{nf-core/hackathon}{(Member of organization committee)}
+	
+	\mycvitemcomment{2015}{Journées nationales de la CFD}{(Member of organization committee and Webmaster)}
+
+		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee)}
+
+		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and Animation of a stand)}
+
+		\mycvitemcomment{2011}{7th BIOTechno forum in Marseille}{(Head of organization committee)}
+
+		\mycvitemcomment{2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University}{}
+
+		\mycomment{\hfill(Member of organization committee)}
+		
+		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support)}
 
 	\vfill
-
+	
 	\section{\texorpdfstring{\faUsers\ Associations}{Associations}}
 		\mycvitemcomment{2012-2019}{Contributor to \faGlobeEurope\ \myurl{http://bioinfo-fr.net/}}{(Collaborative French-speaking bioinformatics blog)}
 
@@ -180,38 +210,22 @@
 
 		\mycvitemcomment{2009-2010}{Webmaster of Hippo'Thèse}{}
 
-	% \vfill
+	\vfill
+
 	% \section{Scientific Societies}
 	% 	\cvitem{BioinfoDiag}{Member of Réseau Français de Bioinformatique pour le Diagnostic}
 	% 	\cvitem{ISCB}{Member of International Society of Computational Biology}
 	% 	\cvitem{SFBI}{Member of Société Française de BioInformatique}
 	% 	\cvitem{CFD}{Member of Communauté Française des Docteurs}
 
-	\vfill
-
-	\section{\texorpdfstring{\faList\ Organization and Events}{Organization and Events}}
-		\mycvitemcomment{2015}{Journées nationales de la CFD}{(Member of organization committee and Webmaster)}
-
-		\mycvitemcomment{2012}{Doctoriales en Provence}{(Member of organization committee)}
-
-		\mycvitemcomment{2011}{Marché de la Chimie - Fête de la Science}{(Conception and Animation of a stand)}
-
-		\mycvitemcomment{2011}{7th BIOTechno forum in Marseille}{(Head of organization committee)}
-
-		\mycvitemcomment{2009-2012}{Annual meeting of doctoral school in Biology and Health Sciences from Aix-Marseille University}{}
-
-		\mycomment{\hfill(Member of organization committee)}
-
-		\mycvitemcomment{2007-2011\hfill}{Plan de Cuques French Comics Festival}{(Logistic support)}
-
-	\vfill
+	% \vfill
 
 	\section{\texorpdfstring{\faComment\ Languages}{Languages}}
-		\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
+	\cvitem{French}{Native\hfill\ English Fluent\hfill\ Swedish Notions}
 
 	\vfill
-
+	
 	\section{\texorpdfstring{\faInfoCircle\ Interests}{Interests}}
-		\cvitem{}{Yoga, Running, Cinema, Poker, Gardening, Ice-Skating, Science-Fiction, Popular science}
-
+	\cvitem{}{Yoga, Cinema, Board-Games, Gardening, Video-Games, Science-Fiction, Popular science}
+	
 \end{document}
