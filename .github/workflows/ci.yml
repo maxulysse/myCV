@@ -34,6 +34,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git checkout -B latest
-          git add CV-MGarcia-latest.pdf
+          git add CV-MGarcia.pdf
           git commit -m "Update CV - $(date +%Y-%m-%d)"
           git push -f origin latest
